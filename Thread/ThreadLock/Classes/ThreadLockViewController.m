@@ -63,11 +63,19 @@
     testlock = [[NSLock alloc]init];
     self.storages = [NSMutableArray array];
     self.lockedObj = [NSObject new];
-    [NSThread detachNewThreadSelector:@selector(pushDataIn) toTarget:self withObject:nil];    
-    [NSThread detachNewThreadSelector:@selector(popDataOut) toTarget:self withObject:nil];
+//    [NSThread detachNewThreadSelector:@selector(pushDataIn) toTarget:self withObject:nil];    
+//    [NSThread detachNewThreadSelector:@selector(popDataOut) toTarget:self withObject:nil];
 //    [NSThread detachNewThreadSelector:@selector(popDataOut) toTarget:self withObject:nil];
     
 }
+- (void)loadView {
 
+    self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
+//            [super loadView];
+    self.view.backgroundColor = [UIColor redColor];
+}
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
 
 @end
